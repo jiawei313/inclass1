@@ -32,7 +32,11 @@ public class StudentTest {
 		
 		int actual = secondStudent.compareTo(firstStudent);
 		int expected = 1;
-		
+		boolean result = false;
+		if(actual > 0) {
+			result = true;
+		}
+		assertTrue(result);
 		assertEquals(expected, actual);
 		
 		Student student = new Student("x", "Y", 5);
@@ -41,7 +45,17 @@ public class StudentTest {
 		actual = secondStudent.compareTo(student);
 		assertEquals(expected, actual);
 
-
+		result = false;
+		
+		if(actual > 0) {
+			result = true;
+		}
+		assertTrue(result);
+		Student studentsame = new Student("x", "y", 5);
+		actual = secondStudent.compareTo(studentsame);
+		expected = 0;
+		assertEquals(expected, actual);		
+		
 		
 		
 		
